@@ -37,9 +37,15 @@ main{
     flex-wrap: wrap;
 }
 .carta{
+    position: relative;
     width: 117px;
     height: 146px;
     margin: 0 34px 34px 0;
+}
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background: #A7E9AF;
     border: 1px solid #99CEA8;
     box-sizing: border-box;
@@ -47,22 +53,37 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
-.frente-carta img{
-    width: 100px;
-    height: 100px;
+.frente-carta{
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: rotateY(0deg);
+}
+img{
+    width: 100px;
+    height: 100px;
 }
 .verso-carta{
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: rotateY(180deg);
 }
-.escondido{
-    display: none;
+.carta:hover .verso-carta{
+    transform: rotateY(0deg);
 }
+.carta:hover .frente-carta{
+    transform: rotateY(-180deg);
+}
+.carta:hover{
+    cursor: pointer;
+}
+
+
 @media (max-width: 634px){
     body{
         min-width: 334px;
