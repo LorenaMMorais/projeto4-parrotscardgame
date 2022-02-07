@@ -71,18 +71,26 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
-.carta:hover .verso-carta{
+.verso-escolhida{
     transform: rotateY(0deg);
 }
-.carta:hover .frente-carta{
+.frente-escolhida{
     transform: rotateY(-180deg);
 }
 .carta:hover{
     cursor: pointer;
 }
-
+.cronometro{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.cronometro p{
+    font-size: 15px;
+    color: black;
+}
 
 @media (max-width: 634px){
     body{
